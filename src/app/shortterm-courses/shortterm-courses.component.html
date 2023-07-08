@@ -1,0 +1,20 @@
+<h3>shortterm-courses</h3>
+
+
+ <div class="slider-container">  
+      <button mat-icon-button (click)="previousSlide()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <div class="slide" [style.transform]="'translateX(' + (-slideIndex * 100) + '%)'">
+        <div *ngFor="let slide of slides" class="slide-content">
+          <h1>{{ slide.heading }}</h1>
+          <p>{{ slide.body }}</p>
+          <a [href]="slide.link">
+            <img [src]="slide.image" alt="Slide Image">
+          </a>
+        </div>
+      </div>
+      <button mat-icon-button (click)="nextSlide()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </div>
